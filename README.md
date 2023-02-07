@@ -142,3 +142,22 @@ Los ítems a introducir son para Sevilla:
 *{"precio_kWh":0.107,"unidad":"€/kWh"},{"superficie":550,"unidad":"m2"}*
 
 Para comprobar que se ha actualizado correctamente la colección, muestra cuatro documentos de Sevilla y cuatro de Valladolid, correspondientes a los timestamps: 2020-07-01T08:00:00Z, 2020-07-01T23:15:00Z. Cada intervalo se envían dos documentos desde cada ciudad: (Temperatura y Humedad_relativa) + (Emision_CO2 y Consumo_electrico).
+
+## Datos de prueba
+```
+db.test.insert([{"timestamp":"2020-07-01T00:00:00Z","sensor_id":1,"location_id":2,"medidas":[{"tipo_medida":"Temperatura","valor":22.08,"unidad":"ºC"},{"tipo_medida":"Humedad_relativa","valor":34.92,"unidad":"%"}]},
+
+{"timestamp":"2020-07-01T00:00:00Z","sensor_id":2,"location_id":2,"medidas":[{"tipo_medida":"Emision_CO2","valor":2.055,"unidad":"gCO2/m2"},{"tipo_medida":"Consumo_electrico","valor":0.00269,"unidad":"kWh/m2"}]},
+
+{"timestamp":"2020-07-01T00:15:00Z","sensor_id":1,"location_id":2,"medidas":[{"tipo_medida":"Temperatura","valor":21.12,"unidad":"ºC"},{"tipo_medida":"Humedad_relativa","valor":37.7,"unidad":"%"}]},
+
+{"timestamp":"2020-07-01T00:15:00Z","sensor_id":2,"location_id":2,"medidas":[{"tipo_medida":"Emision_CO2","valor":2.102,"unidad":"gCO2/m2"},{"tipo_medida":"Consumo_electrico","valor":0.00272,"unidad":"kWh/m2"}]},
+
+{"timestamp":"2020-07-01T00:00:00Z","sensor_id":1,"location_id":1,"medidas":[{"tipo_medida":"Temperatura","valor":16.61,"unidad":"ºC"},{"tipo_medida":"Humedad_relativa","valor":83.74,"unidad":"%"}]},
+
+{"timestamp":"2020-07-01T00:00:00Z","sensor_id":2,"location_id":1,"medidas":[{"tipo_medida":"Emision_CO2","valor":1.572,"unidad":"gCO2/m2"},{"tipo_medida":"Consumo_electrico","valor":0.00188,"unidad":"kWh/m2"}]},
+
+{"timestamp":"2020-07-01T00:15:00Z","sensor_id":1,"location_id":1,"medidas":[{"tipo_medida":"Temperatura","valor":15.75,"unidad":"ºC"},{"tipo_medida":"Humedad_relativa","valor":83.08,"unidad":"%"}]},
+
+{"timestamp":"2020-07-01T00:15:00Z","sensor_id":2,"location_id":1,"medidas":[{"tipo_medida":"Emision_CO2","valor":1.626,"unidad":"gCO2/m2"},{"tipo_medida":"Consumo_electrico","valor":0.00146,"unidad":"kWh/m2"}]}])
+```
