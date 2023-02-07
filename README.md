@@ -1,5 +1,26 @@
 # Caso práctico NoSQL: MongoDB
 
+## Preparación
+
+En el ámbito técnico, la solución incluye la utilización de un conjunto de tecnologías entre las que están:
+
+* Linux
+* StreamSets
+* MongoDB
+
+Los pasos que se seguirán en esta práctica son:
+
+1. Introducción teórica al internet of things (IoT).
+2. Se observará el formato de los dos ficheros que contienen los datos de los cuatro sensores de Valladolid y los cuatro sensores de Sevilla, y que actúan como data loggers, como se verá a continuación.
+3. Introducción teórica al internet of things (IoT),
+Se observará el formato de los dos ficheros que contienen los datos de los cuatro sensores de Valladolid y los cuatro sensores de Sevilla, y que actúan como data loggers, como se verá a continuación. Se construirá un pipeline de streamsets (tecnología que se utiliza para la ingesta continua en entornos big data), que estará conectado a un fichero al que se irán enviando datos desde los dos ficheros con formato JSON de Valladolid y Sevilla: (Dataset_IoT_MongoDB_Sevilla, Dataset_IoT_MongoDB_Valladolid) 
+
+Se simula de esta forma que estos dos ficheros son sensores que envían datos a un topic de Kafka (que en este caso es una fichero inicialmente vacío llamado "kafka_topic_simulator.json" en la ruta /home/imfbigdata/mongodb).
+
+Este topic está conectado el flujo de streamsets, que consume los datos que se publican en el topic, realiza un pequeño preprocesado de la fecha e ingesta en una BBDD de MongoDB llamada "sensores_IoT", concretamente en la colección "datos_sensores".
+
+Una vez se hayan cargado todos los datos de medición de los sensores en la BBDD de MongoDB, se podrá proceder a la resolución del caso de negocio.
+
 ## Introducción al caso de negocio
 
 Una empresa multinacional decide llevar a cabo un proyecto basado en el internet de las cosas (IoT) con dos objetivos principales:
