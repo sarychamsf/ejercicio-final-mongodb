@@ -109,13 +109,17 @@ Las consultas serán idénticas para Valladolid y Sevilla, distinguiéndose úni
 
 ### Caso 7
 
-Obtener la media de emisiones de CO2 de cada ciudad por separado en la hora punta de personas en la oficina, que se considera las 10 AM. Por tanto, se obtendrán por un lado los registros con hora 10 en el timestamp, que midan CO2 y que sean de Valladolid y obtener la media de emisiones de CO2 durante los 14 días en esa hora como la clave "Avg_Emision_CO2" (recordar que cada hora se reciben cuatro valores desde el sensor para cada ciudad). Mostrar los resultados ordenados por la clave "Avg_Emision_CO2", mostrando como primer documento la media más baja. Redondear esta clave a dos decimales. Realizar la misma operativa con Sevilla.
+Obtener la media de emisiones de CO2 de cada ciudad por separado en la hora punta de personas en la oficina, que se considera las 10 AM. Por tanto, se obtendrán por un lado los registros con hora 10 en el timestamp, que midan CO2 y que sean de Valladolid y obtener la media de emisiones de CO2 durante los 14 días en esa hora como la clave ```"Avg_Emision_CO2"``` (recordar que cada hora se reciben cuatro valores desde el sensor para cada ciudad). Mostrar los resultados ordenados por la clave ```"Avg_Emision_CO2"```, mostrando como primer documento la media más baja. Redondear esta clave a dos decimales. Realizar la misma operativa con Sevilla.
 
 ### Caso 8
 
 Se ha descubierto que el sensor de temperatura de Valladolid mide 1,5 ºC de más. Por ello, se pide actualizar todos los valores correspondientes a este sensor decrementando el valor de la temperatura en 1,5 ºC.
 
-Antes de realizar la actualización, se ordenarán mostrando primero el de mayor temperatura, y muestra los dos primeros documentos del sensor de Valladolid con la mayor temperatura. Solo mostrar las siguientes claves: timestamp, "location_id". Del array de medidas solo mostrar el primer ítem, por ejemplo: "medidas" : [ { "tipo_medida" : "Temperatura", "valor" : 15.75, "unidad" : "ºC" } ] }. No incluir el ObjectId)
+Antes de realizar la actualización, se ordenarán mostrando primero el de mayor temperatura, y muestra los dos primeros documentos del sensor de Valladolid con la mayor temperatura. Solo mostrar las siguientes claves: timestamp, "location_id". Del array de medidas solo mostrar el primer ítem, por ejemplo: 
+
+```"medidas" : [ { "tipo_medida" : "Temperatura", "valor" : 15.75, "unidad" : "ºC" } ] }```
+
+No incluir el ObjectId.
 
 Realizar el mismo proceso una vez que has actualizado los valores y realiza capturas de los dos documentos anteriores para comprobar que se han actualizado.
 
@@ -135,13 +139,13 @@ Solamente se añadirán a los documentos que tengan como medida el consumo eléc
 
 Los ítems a introducir son para Valladolid:
 
-*{"precio_kWh":0.102,"unidad":"€/kWh"},{"superficie":450,"unidad":"m2"}*
+```{"precio_kWh":0.102,"unidad":"€/kWh"},{"superficie":450,"unidad":"m2"}```
 
 Los ítems a introducir son para Sevilla:
 
-*{"precio_kWh":0.107,"unidad":"€/kWh"},{"superficie":550,"unidad":"m2"}*
+```{"precio_kWh":0.107,"unidad":"€/kWh"},{"superficie":550,"unidad":"m2"}```
 
-Para comprobar que se ha actualizado correctamente la colección, muestra cuatro documentos de Sevilla y cuatro de Valladolid, correspondientes a los timestamps: 2020-07-01T08:00:00Z, 2020-07-01T23:15:00Z. Cada intervalo se envían dos documentos desde cada ciudad: (Temperatura y Humedad_relativa) + (Emision_CO2 y Consumo_electrico).
+Para comprobar que se ha actualizado correctamente la colección, muestra cuatro documentos de Sevilla y cuatro de Valladolid, correspondientes a los timestamps: ```2020-07-01T08:00:00Z```, ```2020-07-01T23:15:00Z```. Cada intervalo se envían dos documentos desde cada ciudad: (Temperatura y Humedad_relativa) + (Emision_CO2 y Consumo_electrico).
 
 ## Datos de prueba
 ```
