@@ -47,7 +47,7 @@ db.datos_sensores.find({"location_id": 1,
 }).count()
 
 
-# Recogidos en Sevilla
+// Recogidos en Sevilla
 db.datos_sensores.find({"location_id": 2, 
                   "medidas.tipo_medida": {$in:["Temperatura"]},
                   "timestamp":{$in:[/2020-07-0/, /2020-07-10/]}
